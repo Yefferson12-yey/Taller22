@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emisor - Sistema de Transmisión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Panel de Transmisión (Emisor)</h1>
+            <div class="connection-status">
+                <div class="status-dot"></div>
+                <span id="connectionStatus">Desconectado</span>
+            </div>
+        </header>
+
+        <div class="stream-box">
+            <h2>Emisor (Cámara)</h2>
+            <div class="video-container">
+                <video id="localVideo" autoplay playsinline muted></video>
+                <div class="video-controls">
+                    <div class="control-group">
+                        <button id="startButton" class="btn primary">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="stopButton" class="btn danger" disabled>
+                            <i class="fas fa-stop"></i>
+                        </button>
+                        <button id="fullscreenButton" class="btn secondary">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="control-group">
+                        <div class="volume-control">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                        </div>
+                        <select id="qualitySelector" class="quality-select">
+                            <option value="high">Alta Calidad (1080p)</option>
+                            <option value="medium">Media Calidad (720p)</option>
+                            <option value="low">Baja Calidad (480p)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="stream-stats">
+                <p>Estado: <span id="streamStatus">Inactivo</span></p>
+                <p>Calidad: <span id="streamQuality">-</span></p>
+                <p>FPS: <span id="streamFps">0</span></p>
+                <p>Resolución: <span id="resolution">-</span></p>
+                <p>Tiempo: <span id="streamTime">00:00:00</span></p>
+            </div>
+        </div>
+
+        <div class="viewer-link">
+            <p>URL para espectadores: <a href="viewer.html" target="_blank">Abrir vista de espectador</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

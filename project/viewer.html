@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptor - Sistema de Transmisión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container viewer-container">
+        <header>
+            <h1>Vista de Espectador</h1>
+            <div class="connection-status">
+                <div class="status-dot"></div>
+                <span id="viewerStatus">Esperando transmisión...</span>
+            </div>
+        </header>
+
+        <div class="stream-box viewer-box">
+            <div class="video-container">
+                <video id="remoteVideo" autoplay playsinline></video>
+                <div class="video-controls">
+                    <div class="control-group">
+                        <button id="viewerFullscreen" class="btn secondary">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="viewerVolume" min="0" max="100" value="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stream-stats">
+                <div class="quality-indicator">
+                    <span class="quality-label">Calidad de Señal:</span>
+                    <div class="signal-bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <p>Resolución: <span id="viewerResolution">-</span></p>
+                <p>Tiempo de conexión: <span id="viewerTime">00:00:00</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="viewer.js"></script>
+</body>
+</html>
